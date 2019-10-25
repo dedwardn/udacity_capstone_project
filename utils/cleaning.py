@@ -19,3 +19,8 @@ def clean_portfolio(df):
     df = pd.concat((df, type_dummies), axis=1, sort=False)
 
     return df
+
+def clean_profile_data(df):
+    df['became_member_on'] = pd.to_datetime(df['became_member_on'], format="%Y%m%d")
+    return df
+
