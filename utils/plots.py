@@ -64,13 +64,13 @@ def detailed_offer_plot(user, portfolio, profile, transcript):
                  enumerate(user_transcript.loc[user_transcript['event'] == 'offer received', 'offer_id'])]
     offers_start = np.array(user_transcript.loc[user_transcript['event'] == 'offer received', 'time'])
     offers_type = np.array(
-        [portfolio_clean.loc[portfolio_clean['id'] == offer_id, 'offer_type'].values.astype(str)[0] for offer_id in
+        [portfolio.loc[portfolio['id'] == offer_id, 'offer_type'].values.astype(str)[0] for offer_id in
          user_transcript.loc[user_transcript['event'] == 'offer received', 'offer_id']])
     offers_difficulty = np.array(
-        [portfolio_clean.loc[portfolio_clean['id'] == offer_id, 'difficulty'].values.astype(str)[0] for offer_id in
+        [portfolio.loc[portfolio['id'] == offer_id, 'difficulty'].values.astype(str)[0] for offer_id in
          user_transcript.loc[user_transcript['event'] == 'offer received', 'offer_id']])
     offers_reward = np.array(
-        [portfolio_clean.loc[portfolio_clean['id'] == offer_id, 'reward'].values.astype(str)[0] for offer_id in
+        [portfolio.loc[portfolio['id'] == offer_id, 'reward'].values.astype(str)[0] for offer_id in
          user_transcript.loc[user_transcript['event'] == 'offer received', 'offer_id']])
     n_offers = len(offers_start)
     offers_duration = np.array(
@@ -169,3 +169,6 @@ def detailed_offer_plot(user, portfolio, profile, transcript):
     axs[-1].plot(interleaved_transactions['time'], interleaved_transactions['cumsum'], 'b', label='cumulative spending')
     axs[-1].grid(True)
     return fig
+
+
+
