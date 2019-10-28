@@ -44,9 +44,6 @@ def build_user_df(portfolio, profile, transcript, offers):
         # Get time spent in any window
         windows = list(zip(user_offers['view_time'], user_offers['view_time'] + user_offers['time_in_window']))
         intervals = merged_intervals(windows)
-        #         print(windows)
-        #         print(intervals)
-        #         print(np.diff(np.array(intervals).transpose(), axis=0).sum())
         time_in_windows = np.diff(np.array(intervals).transpose(), axis=0).sum()
         time_no_windows = max_time - time_in_windows
 
@@ -81,7 +78,7 @@ def build_user_df(portfolio, profile, transcript, offers):
             view_ratio = user_offers['viewed'].sum() / user_offers.shape[0]
             completion_ratio = user_offers['completed'].sum() / user_offers.shape[0]
             view_and_complete_ratio = user_offers.loc[(user_offers['completed'] == 1) & (
-                    user_offers['viewed'] == 1), 'start_time'].count() / user_offers.shape[0]
+                        user_offers['viewed'] == 1), 'start_time'].count() / user_offers.shape[0]
 
         user_dict.update({user: {'spent_total': total_spent,
                                  'spent_in_window': spent_in_window,
@@ -89,11 +86,12 @@ def build_user_df(portfolio, profile, transcript, offers):
                                  'spent_in_discount': spent_in_discount_window,
                                  'spent_in_bogo': spent_in_bogo_window,
                                  'spent_in_informational': spent_in_info_window,
-                                 'time_in_window': float(time_in_windows),
-                                 'time_no_window': time_no_windows,
-                                 'time_in_discount': time_in_discount,
-                                 'time_in_bogo': time_in_bogo,
-                                 'time_in_informational': time_in_info,
+                                 'time_in_window': float(time_in_windows) + 1,
+                                 # add one to avoid infinity for users that view, spend and complete in the same hour
+                                 'time_no_window': time_no_windows + 1,
+                                 'time_in_discount': time_in_discount + 1,
+                                 'time_in_bogo': time_in_bogo + 1,
+                                 'time_in_informational': time_in_info + 1,
                                  'view_ratio': view_ratio,
                                  'completion_ratio': completion_ratio,
                                  'view_and_complete_ratio': view_and_complete_ratio,
@@ -103,8 +101,6 @@ def build_user_df(portfolio, profile, transcript, offers):
 
     profile_expanded = pd.merge(profile.sort_values('id'), expanded.sort_values('user_id'), left_on='id',
                                 right_on='user_id').drop(columns='id')
-    gender_dummies = pd.get_dummies(profile_expanded.loc[:, 'gender'], prefix='gender', dummy_na=True)
-    profile_expanded = profile_expanded.merge(gender_dummies, left_index=True, right_index=True)
     return profile_expanded
 
 
@@ -188,10 +184,10 @@ def build_offer_df(portfolio, profile, transcript):
             if viewed:
                 # time from viewed to completion or end of offer window.
                 if completed_time:
-                    time_in_window = completed_time - viewed_time
+                    time_in_window = completed_time - viewed_time + 1
                 else:
-                    time_in_window = end - viewed_time
-                # cumulative amount spent in valid window, if no valid window, no amount spent due to offer
+                    time_in_window = end - viewed_time + 1
+                    # cumulative amount spent in valid window, if no valid window, no amount spent due to offer
                 transactions_in_window = user_transactions.loc[(user_transactions['time'] >= viewed_time) &
                                                                (user_transactions[
                                                                     'time'] <= viewed_time + time_in_window), :]
@@ -213,7 +209,6 @@ def build_offer_df(portfolio, profile, transcript):
                                    'time_in_window': time_in_window,
                                    'amount_in_window': amount_in_window}})
             count += 1
-
     offer_df = pd.DataFrame.from_dict(offers, orient='index')
     offer_type_dummies = pd.get_dummies(offer_df.loc[:, 'offer_type'], prefix='type')
     offer_df = offer_df.merge(offer_type_dummies, left_index=True, right_index=True)
@@ -317,3 +312,5 @@ def merged_intervals(windows):
         else:
             intervals.append([start, end])
     return intervals
+
+
