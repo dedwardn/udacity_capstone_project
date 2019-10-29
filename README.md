@@ -1,6 +1,9 @@
 # Udacity Data scientist capstone project
 This repository has been made to support the blog post produced as a deliverable to the capstone project of the data science nanodegree offered by Udacity.
 
+The blogpost can be found here: https://medium.com/@daniel.nordas/how-companies-makes-sense-out-of-you-ab73fcf1e518?sk=15dbb8cca5ae1aca9815bf7cd05c97be 
+
+
 Starbucks are providing data describing the transactions by a set of users with some features like age, gender and income through a period of time when they were exposed to different types of offers.
 
 The task is described by Udacity as this: 
