@@ -20,22 +20,28 @@ The task is described by Udacity as this: 
 
 and more built standard modules in python 3.6.
 
-## 
+## Code structure
+The project has been mostly solved in jupyter notebooks. A short explanation is given below. 
+
+Some helper functions has been placed in a separate package called "utils". 
+
+- data: The input data
+
+- Utils: Helper functions
+   - plots.py: functions for some self-defined plots
+   - cleaning.py: functions to help clean the data after exploration was performed
+   - build_matrices.py: Functions to construct matrices according to findings in the exploration and wrangling
+
+- Jupyter notebooks:
+   - Starbucks_Capstone_notebook.ipynb - Exploration and wrangling of the input data
+   - Build_matrices.ipynb - Investigation of how to build matrices for use in analysis 
+   - Heuristics.ipynb - Analysis of data and visualisations. Fairly unstructured due to the exploratory nature of the analysis. 
+   
+- plots: 
+A folder of plots produced for reporting
+
+- offer_df.pkl - dataframe exported by pandas. offers matrix with information about the offers users are given, and some user interaction data. Each row is realted to an offer given to a specific customer. Created in Build_matrices.ipynb
+- profile_expanded.pkl - dataframe exported by pandas. Profile expanded is a dataframe with several features engineered from a combination of all the data sets where each row is related to one user. Created in Build_matrices.ipynb
+   
 
 
-# Build matrices notebooks
-This notebook is used to develop the matrices that will be used for analysis. Based on learnings from the exploratory notebook "Starbucks_Capstone_notebook.ipynb". I have defined a set of parameteres that has to be derived from the combination of portfolio, profile and transcript data. 
-
-## Interaction matrices
-In princple I have decided to make two main matrices. One focusing on the users, and one focusing on the offers given. 
-
-Documentation of the columns for each matrix is given in a separate description. XXINSERT_REF
-
-### Offer based interactions
-The offers dataframe will have one line per offer given to a user. Each line will consist of data related to the offer, taken from the portfolio data, data related to user identity, taken from the profile data, and data related to user interactions with the given offer, derived from the transcript data. This matrix will be the basis for investigating the user - offer interactions. 
-
-### User based interactions
-The profile_exp dataframe will be built with one row per user (in principle an expansion of the profile.json data. The expansion will provide features about the user, user details as provided in the original profile data, and aggregated features about the users offer and spending history. This matrix will be used for segmentation analysis of the users and their interactions. 
-
-## Info
-The functions created in this notebook will be moved to different python modules as seen fit. There are a lot of helper methods needed to build both matrices, and these can be investigated in detail below, or in the 
