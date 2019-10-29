@@ -11,6 +11,19 @@ The task is described by Udacity as this: 
 >
 >Your task is to combine transaction, demographic and offer data to determine which demographic groups respond best to which offer type.
 
+Based on this instruction I framed some research questions as follows: 
+
+- Is there any indication that an offer works?
+- Is there any gender which responds better to offers in general?
+- Is there any age group which responds better to offers in general?
+
+## Summary 
+The short summary is that there is definitely support to claim that offers work. However, the informational ones didn't seem to give much of a spike in spendings for any group. 
+
+It can also seem like women respond better in general with a slightly higher ratio of spending during vs outside of offers. 
+
+There are some indication that the younger and older age groups are more influenced by the offers, but I have not found one group that clearly sticks out. 
+
 ## Libraries
 - python 3.6
 - pandas
@@ -44,4 +57,6 @@ A folder of plots produced for reporting
 - profile_expanded.pkl - dataframe exported by pandas. Profile expanded is a dataframe with several features engineered from a combination of all the data sets where each row is related to one user. Created in Build_matrices.ipynb
    
 
+## Aknowledgements
+I would like to thank my girlfriend for being patient with me during many long nights with this course and in the end capstone project. I would also like to thank the numerous contributors to places like StackExchange. Without you guys, we would be lost all of us! 
 
