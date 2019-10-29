@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa74d457-956b-470e-a61f-274335f81ab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build_matrices.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Build_matrices.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/offer_df.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/offer_df.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/build_matrices.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/build_matrices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Heuristics_user.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Heuristics_user.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Starbucks_Capstone_notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Starbucks_Capstone_notebook.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/in_window_out_window_ratio.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/in_window_out_window_ratio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spent_in_window.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spent_in_window.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spent_in_window_norm.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spent_in_window_norm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spent_no_window.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spent_no_window.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spent_no_window_norm.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spent_no_window_norm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_expanded.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/profile_expanded.pkl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +35,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/plots.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
+            <state relative-caret-position="2263">
               <caret line="162" column="70" selection-start-line="162" selection-start-column="70" selection-end-line="162" selection-end-column="70" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -92,8 +97,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1913" />
-    <option name="width" value="948" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -160,10 +165,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="0" width="948" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.189011" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18376069" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -214,7 +219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/plots.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
+        <state relative-caret-position="2263">
           <caret line="162" column="70" selection-start-line="162" selection-start-column="70" selection-end-line="162" selection-end-column="70" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
